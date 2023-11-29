@@ -1,23 +1,26 @@
-let nome = "Moses"
-let xp = 10001
-let nivel = ""
+let resultado = partidas(95, 5)
 
-if (xp <= 1000) {
-  nivel = "Ferro"
-} else if (xp <= 2000) {
-  nivel = "Bronze"
-} else if (xp <= 6000) {
-  nivel = "Prata"
-} else if (xp <= 7000) {
-  nivel = "Ouro"
-} else if (xp <= 8000) {
-  nivel = "Platina"
-} else if (xp <= 9000) {
-  nivel = "Ascendente"
-} else if (xp <= 10000) {
-  nivel = "Imortal"
-} else if (xp >= 10001) {
-  nivel = "Radiante"
+function partidas(vitorias, derrotas){
+    let saldoRankeadas = vitorias - derrotas
+    return saldoRankeadas
 }
 
-console.log(`O Herói de nome ${nome} está no nível de ${nivel}`)
+let nivel;
+
+if(resultado < 10){
+    nivel = "Ferro"
+}else if(resultado > 10 && resultado <= 20){
+    nivel = "Bronze"
+}else if(resultado > 20 && resultado <= 50){
+    nivel = "Prata"
+}else if(resultado > 50 && resultado <= 80){
+    nivel = "Ouro"
+}else if(resultado > 80 && resultado <= 90){
+    nivel = "Diamante"
+}else if(resultado > 90 && resultado <= 100){
+    nivel = "Lendário"
+}else{
+    return "Imortal"
+}
+
+console.log("O Jogador tem saldo de " + resultado + " e está no nível " + nivel)
